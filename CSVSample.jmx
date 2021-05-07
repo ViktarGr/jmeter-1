@@ -165,10 +165,8 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">println(&quot;hello world&quot;)
-
-myvar = vars.get(&quot;status&quot;)
-OUT.print(myvar)</stringProp>
+            <stringProp name="script">println(&quot;${__P(mess)}&quot;)
+</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
