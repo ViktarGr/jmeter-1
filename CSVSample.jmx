@@ -165,11 +165,10 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println(&quot;Hello World!&quot;);
-    }
-}</stringProp>
+            <stringProp name="script">println(&quot;hello world&quot;)
+
+myvar = vars.get(&quot;status&quot;)
+OUT.print(myvar)</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
