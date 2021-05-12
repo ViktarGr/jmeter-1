@@ -165,7 +165,7 @@
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">println(&quot;check&quot;)
+            <stringProp name="script">println(&quot;${__P(mess)}&quot;)
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
