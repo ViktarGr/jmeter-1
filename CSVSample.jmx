@@ -11,6 +11,17 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
+      <com.blazemeter.jmeter.DirectoryListingConfig guiclass="com.blazemeter.jmeter.DirectoryListingConfigGui" testclass="com.blazemeter.jmeter.DirectoryListingConfig" testname="jp@gc - Directory Listing Data Source" enabled="true">
+        <stringProp name="directory">C:\CI\jmeter-1</stringProp>
+        <stringProp name="variableName"></stringProp>
+        <boolProp name="useFullPath">true</boolProp>
+        <boolProp name="randomOrder">false</boolProp>
+        <boolProp name="recursiveListing">false</boolProp>
+        <boolProp name="rewindOnTheEndOfList">true</boolProp>
+        <boolProp name="reReadDirectory">false</boolProp>
+        <boolProp name="independentListPerThread">false</boolProp>
+      </com.blazemeter.jmeter.DirectoryListingConfig>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -161,13 +172,50 @@
           <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
         </JavaSampler>
         <hashTree>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Generate string" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import org.apache.commons.lang.RandomStringUtils
+
+String charset = ((&apos;A&apos;..&apos;Z&apos;) + (&apos;0&apos;..&apos;9&apos;)).join()
+Integer length = 9
+String randomString = RandomStringUtils.random(length, charset.toCharArray())
+println(&quot;randomString&quot;)
+println(randomString)</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Console message" enabled="false">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">println(&quot;${__P(mess)}&quot;)
+println(&quot;kek&quot;)
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Generate file" enabled="false">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import org.apache.commons.io.FilenameUtils;
+
+attr1 = vars.get(&quot;name&quot;);
+attr2 = vars.get(&quot;mail&quot;);
+attr3 = vars.get(&quot;stat&quot;);
+
+f = new FileOutputStream(&quot;C:/Users/Администратор/Desktop/Aptive2.0/streetServicePros.csv&quot;, true);
+
+p = new PrintStream(f);
+
+
+p.println(attr2+&quot; &quot;+attr1+&quot; &quot;+attr3);
+
+p.close();
+f.close();</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
@@ -456,7 +504,7 @@
         <stringProp name="classname">org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient</stringProp>
       </BackendListener>
       <hashTree/>
-      <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="Property Display" enabled="true"/>
+      <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="Property Display" enabled="false"/>
       <hashTree/>
     </hashTree>
   </hashTree>
