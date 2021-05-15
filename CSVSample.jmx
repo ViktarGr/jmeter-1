@@ -11,17 +11,6 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <com.blazemeter.jmeter.DirectoryListingConfig guiclass="com.blazemeter.jmeter.DirectoryListingConfigGui" testclass="com.blazemeter.jmeter.DirectoryListingConfig" testname="jp@gc - Directory Listing Data Source" enabled="true">
-        <stringProp name="directory">C:\CI\jmeter-1</stringProp>
-        <stringProp name="variableName"></stringProp>
-        <boolProp name="useFullPath">true</boolProp>
-        <boolProp name="randomOrder">false</boolProp>
-        <boolProp name="recursiveListing">false</boolProp>
-        <boolProp name="rewindOnTheEndOfList">true</boolProp>
-        <boolProp name="reReadDirectory">false</boolProp>
-        <boolProp name="independentListPerThread">false</boolProp>
-      </com.blazemeter.jmeter.DirectoryListingConfig>
-      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -38,7 +27,7 @@
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">3</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -50,6 +39,16 @@
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="FolderPATH" elementType="Argument">
+              <stringProp name="Argument.name">FolderPATH</stringProp>
+              <stringProp name="Argument.value">${__BeanShell(import org.apache.jmeter.services.FileServer; FileServer.getFileServer().getBaseDir();)}${__BeanShell(File.separator,)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Get user details" enabled="true">
           <stringProp name="TestPlan.comments">Top level </stringProp>
           <stringProp name="delimiter">,</stringProp>
@@ -182,11 +181,11 @@
 String charset = ((&apos;A&apos;..&apos;Z&apos;) + (&apos;0&apos;..&apos;9&apos;)).join()
 Integer length = 9
 String randomString = RandomStringUtils.random(length, charset.toCharArray())
-println(&quot;randomString&quot;)
-println(randomString)</stringProp>
+vars.put(&quot;randomString&quot;,randomString)
+</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Console message" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Console message" enabled="false">
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
@@ -196,26 +195,91 @@ println(&quot;kek&quot;)
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Generate file" enabled="false">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Generate file" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">File file = new File(&quot;C:/CI/jmeter-1/kek.txt&quot;)
+file.append(&quot;hello\n&quot;)
+println file.text
+
+//import org.apache.commons.io.FilenameUtils;
+
+//attr1 = vars.get(&quot;randomString&quot;);
+//attr2 = vars.get(&quot;FolderPATH&quot;); 
+//attr3 = &quot;JSR.txt&quot;
+//attr4 = attr2.replace(&quot;\\&quot;, &quot;/&quot;)+attr3;
+
+//f = new FileOutputStream(attr4, true);
+
+//p = new PrintStream(f);
+
+
+//p.println(attr1);
+
+//vars.put(&quot;attr4&quot;,attr4); 
+ 
+
+
+p.close();
+f.close();</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Delete " enabled="false">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">import org.apache.commons.io.FilenameUtils;
 
-attr1 = vars.get(&quot;name&quot;);
-attr2 = vars.get(&quot;mail&quot;);
-attr3 = vars.get(&quot;stat&quot;);
+d1 = vars.get(&quot;attr4&quot;);
+d2 = vars.get(&quot;FolderPATH&quot;);
 
-f = new FileOutputStream(&quot;C:/Users/Администратор/Desktop/Aptive2.0/streetServicePros.csv&quot;, true);
-
-p = new PrintStream(f);
+File inputFile = new File(d1);
+File tempFile = new File(d2+&quot;myTempFile.txt&quot;);
 
 
-p.println(attr2+&quot; &quot;+attr1+&quot; &quot;+attr3);
+BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
-p.close();
-f.close();</stringProp>
+String lineToRemove = &quot;ULQBB4B3U&quot;;
+String currentLine;
+
+while((currentLine = reader.readLine()) != null) {
+    // trim newline when comparing with lineToRemove
+    String trimmedLine = currentLine.trim();
+    if(trimmedLine.equals(lineToRemove)) continue;
+    writer.write(currentLine + System.getProperty(&quot;line.separator&quot;));
+}
+writer.close(); 
+reader.close(); 
+boolean successful = tempFile.renameTo(inputFile);
+
+
+
+
+
+
+
+
+
+//import org.apache.commons.io.FilenameUtils;
+
+//d1 = vars.get(&quot;attr4&quot;);
+//new PrintWriter(d1).close();
+//assertEquals(0, StreamUtils.getStringFromInputStream(new FileInputStream(d1)).length());
+//def out = new File(d1);
+//def newLine = &apos;&apos;;
+
+//def applicationProperties = new File(&quot;d1&quot;);
+//def fileText = applicationProperties.getText(&apos;UTF-8&apos;)
+//println fileText.text; 
+//def newLine = &apos;&apos;;
+
+
+//println def applicationProperties = new File(d1);
+</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
@@ -385,6 +449,12 @@ f.close();</stringProp>
           </elementProp>
           <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
         </JavaSampler>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
         <hashTree/>
       </hashTree>
       <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
