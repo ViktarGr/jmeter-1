@@ -1,47 +1,116 @@
-2021-05-15 16:21:27,418 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2021-05-15 16:21:27,427 INFO o.a.j.JMeter: Loading user properties from: user.properties
-2021-05-15 16:21:27,474 INFO o.a.j.JMeter: Loading system properties from: C:\apache-jmeter-4.0\bin\system.properties
-2021-05-15 16:21:27,488 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: Version 4.0 r1823414
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: java.version=1.8.0_291
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: os.name=Windows 10
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: os.arch=amd64
-2021-05-15 16:21:27,489 INFO o.a.j.JMeter: os.version=10.0
-2021-05-15 16:21:27,490 INFO o.a.j.JMeter: file.encoding=Cp1252
-2021-05-15 16:21:27,490 INFO o.a.j.JMeter: Max memory     =1073741824
-2021-05-15 16:21:27,490 INFO o.a.j.JMeter: Available Processors =8
-2021-05-15 16:21:27,495 INFO o.a.j.JMeter: Default Locale=English (EN)
-2021-05-15 16:21:27,496 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2021-05-15 16:21:27,496 INFO o.a.j.JMeter: JMeterHome=C:\apache-jmeter-4.0
-2021-05-15 16:21:27,496 INFO o.a.j.JMeter: user.dir  =C:\CI\jmeter-1
-2021-05-15 16:21:27,496 INFO o.a.j.JMeter: PWD       =C:\CI\jmeter-1
-2021-05-15 16:21:27,500 INFO o.a.j.JMeter: IP: 10.6.19.7 Name: EPBYMINW142C FullName: 10.6.19.7
-2021-05-15 16:21:27,620 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
-2021-05-15 16:21:27,629 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: javax.swing.plaf.metal.MetalLookAndFeel [Darcula]
-2021-05-15 16:21:27,629 INFO o.a.j.JMeter: Setting LAF to: javax.swing.plaf.metal.MetalLookAndFeel
-2021-05-15 16:21:27,631 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
-2021-05-15 16:21:28,039 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2021-05-15 16:21:28,040 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2021-05-15 16:21:28,867 INFO o.j.r.JARSourceHTTP: Found cached repo
-2021-05-15 16:21:28,974 INFO o.j.r.PluginManager: Plugins Status: [jpgc-directory-listing=0.3, jpgc-dummy=0.4, jpgc-plugins-manager=1.6, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
-2021-05-15 16:21:29,940 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-15 16:21:29,940 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-15 16:21:29,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-15 16:21:29,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-15 16:21:29,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2021-05-15 16:21:29,941 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2021-05-15 16:21:30,196 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
-2021-05-15 16:21:30,197 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file C:\apache-jmeter-4.0\bin\proxyserver.jks
-2021-05-15 16:21:30,287 INFO o.a.j.s.FileServer: Default base='C:\CI\jmeter-1'
-2021-05-15 16:21:30,739 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2021-05-15 16:21:30,739 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
-2021-05-15 16:21:30,740 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2021-05-15 16:21:30,740 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2021-05-15 16:21:35,494 INFO o.a.j.g.a.Load: Loading file: C:\CI\jmeter-1\CSVSample.jmx
-2021-05-15 16:21:35,494 INFO o.a.j.s.FileServer: Set new base='C:\CI\jmeter-1'
-2021-05-15 16:21:35,575 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2021-05-15 16:21:35,578 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2021-05-15 16:21:35,578 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
-2021-05-15 16:21:35,581 INFO o.a.j.s.SaveService: Loading file: C:\CI\jmeter-1\CSVSample.jmx
-2021-05-15 16:21:35,895 INFO o.a.j.s.FileServer: Set new base='C:\CI\jmeter-1'
+2021-05-18 15:10:31,469 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-05-18 15:10:31,480 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2021-05-18 15:10:31,481 INFO o.a.j.JMeter: Loading system properties from: C:\apache-jmeter-4.0\bin\system.properties
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: Version 4.0 r1823414
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: java.version=1.8.0_291
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: os.name=Windows 10
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: os.arch=amd64
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: os.version=10.0
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: file.encoding=Cp1252
+2021-05-18 15:10:31,487 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-05-18 15:10:31,488 INFO o.a.j.JMeter: Available Processors =8
+2021-05-18 15:10:31,492 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-05-18 15:10:31,492 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-05-18 15:10:31,492 INFO o.a.j.JMeter: JMeterHome=C:\apache-jmeter-4.0
+2021-05-18 15:10:31,492 INFO o.a.j.JMeter: user.dir  =C:\CI\jmeter-1
+2021-05-18 15:10:31,492 INFO o.a.j.JMeter: PWD       =C:\CI\jmeter-1
+2021-05-18 15:10:31,493 INFO o.a.j.JMeter: IP: 10.6.19.7 Name: EPBYMINW142C FullName: host.docker.internal
+2021-05-18 15:10:31,661 INFO o.a.j.g.a.LookAndFeelCommand: Installing Darcula LAF
+2021-05-18 15:10:31,672 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: javax.swing.plaf.metal.MetalLookAndFeel [Darcula]
+2021-05-18 15:10:31,672 INFO o.a.j.JMeter: Setting LAF to: javax.swing.plaf.metal.MetalLookAndFeel
+2021-05-18 15:10:31,675 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2021-05-18 15:10:32,184 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-05-18 15:10:32,185 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-05-18 15:10:33,154 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=windows_10-65ba1baa0c6ea45de414c71673f5bdaf-gui
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-05-18 15:10:34,255 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-05-18 15:10:34,542 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2021-05-18 15:10:34,542 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file C:\apache-jmeter-4.0\bin\proxyserver.jks
+2021-05-18 15:10:34,658 INFO o.a.j.s.FileServer: Default base='C:\CI\jmeter-1'
+2021-05-18 15:10:35,144 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2021-05-18 15:10:35,144 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2021-05-18 15:10:35,144 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2021-05-18 15:10:35,144 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2021-05-18 15:10:35,321 INFO o.j.r.PluginManager: Plugins Status: [jpgc-directory-listing=0.3, jpgc-dummy=0.4, jpgc-plugins-manager=1.6, jmeter-core=4.0, jmeter-ftp=4.0, jmeter-http=4.0, jmeter-jdbc=4.0, jmeter-jms=4.0, jmeter-junit=4.0, jmeter-java=4.0, jmeter-ldap=4.0, jmeter-mail=4.0, jmeter-mongodb=4.0, jmeter-native=4.0, jmeter-tcp=4.0, jmeter-components=4.0]
+2021-05-18 15:10:45,233 INFO o.a.j.g.a.Load: Loading file: C:\CI\jmeter-1\cookie.jmx
+2021-05-18 15:10:45,233 INFO o.a.j.s.FileServer: Set new base='C:\CI\jmeter-1'
+2021-05-18 15:10:45,385 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-05-18 15:10:45,388 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-05-18 15:10:45,389 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2021-05-18 15:10:45,391 INFO o.a.j.s.SaveService: Loading file: C:\CI\jmeter-1\cookie.jmx
+2021-05-18 15:10:45,522 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2021-05-18 15:10:45,719 INFO o.a.j.s.FileServer: Set new base='C:\CI\jmeter-1'
+2021-05-18 15:26:58,750 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-05-18 15:26:58,752 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-18 15:26:58,752 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-18 15:26:58,765 INFO o.a.j.v.b.BackendListener: Backend Listener: Starting worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient and queue capacity: 5000
+2021-05-18 15:26:58,767 INFO o.a.j.v.b.BackendListener: Backend Listener: Started  worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient
+2021-05-18 15:26:58,810 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2021-05-18 15:26:58,924 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2021-05-18 15:26:58,925 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2021-05-18 15:26:58,925 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2021-05-18 15:26:58,925 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=true
+2021-05-18 15:26:58,932 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-05-18 15:26:58,932 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-05-18 15:26:58,937 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2021-05-18 15:26:59,249 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = EPBYMINW142C
+2021-05-18 15:26:59,251 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2021-05-18 15:26:59,332 INFO o.a.j.p.h.s.LazySchemeSocketFactory: Setting up HTTPS TrustAll Socket Factory
+2021-05-18 15:26:59,333 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2021-05-18 15:26:59,333 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2021-05-18 15:26:59,338 INFO o.a.j.u.SSLManager: JmeterKeyStore Location:  type JKS
+2021-05-18 15:26:59,338 INFO o.a.j.u.SSLManager: KeyStore created OK
+2021-05-18 15:26:59,338 WARN o.a.j.u.SSLManager: Keystore file not found, loading empty keystore
+2021-05-18 15:27:05,754 INFO o.a.j.g.a.Start: Stopping test
+2021-05-18 15:27:05,761 INFO o.a.j.t.JMeterThread: Stopping: Thread Group 1-1
+2021-05-18 15:27:05,761 WARN o.a.j.t.JMeterThread: Interrupting: Thread Group 1-1 sampler: Login page
+2021-05-18 15:27:05,794 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2021-05-18 15:27:05,795 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-05-18 15:27:05,801 INFO o.a.j.v.b.BackendListener: Worker ended
+2021-05-18 15:27:05,802 INFO o.a.j.v.b.i.InfluxdbBackendListenerClient: Sending last metrics
+2021-05-18 15:27:05,803 INFO o.a.j.v.b.i.HttpMetricsSender: Destroying 
+2021-05-18 15:27:05,810 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2021-05-18 15:28:44,028 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-05-18 15:28:44,029 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-18 15:28:44,030 INFO o.a.j.v.b.BackendListener: Backend Listener: Starting worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient and queue capacity: 5000
+2021-05-18 15:28:44,030 INFO o.a.j.v.b.BackendListener: Backend Listener: Started  worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient
+2021-05-18 15:28:44,032 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2021-05-18 15:28:44,136 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2021-05-18 15:28:44,136 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2021-05-18 15:28:44,136 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2021-05-18 15:28:44,136 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=true
+2021-05-18 15:28:44,136 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-05-18 15:28:44,136 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-05-18 15:28:44,138 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2021-05-18 15:28:45,011 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2021-05-18 15:28:45,011 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2021-05-18 15:28:45,011 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-05-18 15:28:45,025 INFO o.a.j.v.b.BackendListener: Worker ended
+2021-05-18 15:28:45,026 INFO o.a.j.v.b.i.InfluxdbBackendListenerClient: Sending last metrics
+2021-05-18 15:28:45,027 INFO o.a.j.v.b.i.HttpMetricsSender: Destroying 
+2021-05-18 15:28:45,033 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2021-05-18 15:29:58,587 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-05-18 15:29:58,588 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-18 15:29:58,591 INFO o.a.j.v.b.BackendListener: Backend Listener: Starting worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient and queue capacity: 5000
+2021-05-18 15:29:58,591 INFO o.a.j.v.b.BackendListener: Backend Listener: Started  worker with class: class org.apache.jmeter.visualizers.backend.influxdb.InfluxdbBackendListenerClient
+2021-05-18 15:29:58,594 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2021-05-18 15:29:58,699 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2021-05-18 15:29:58,699 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Thread Group.
+2021-05-18 15:29:58,699 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2021-05-18 15:29:58,699 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 perThread=1000.0 delayedStart=true
+2021-05-18 15:29:58,699 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-05-18 15:29:58,699 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-05-18 15:29:58,703 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2021-05-18 15:29:59,414 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2021-05-18 15:29:59,414 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2021-05-18 15:29:59,414 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-05-18 15:29:59,417 INFO o.a.j.v.b.BackendListener: Worker ended
+2021-05-18 15:29:59,417 INFO o.a.j.v.b.i.InfluxdbBackendListenerClient: Sending last metrics
+2021-05-18 15:29:59,419 INFO o.a.j.v.b.i.HttpMetricsSender: Destroying 
+2021-05-18 15:29:59,474 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)

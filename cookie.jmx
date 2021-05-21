@@ -52,7 +52,7 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">50</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -118,7 +118,7 @@ vars.put(&quot;randomString&quot;,randomString)
             <stringProp name="RegexExtractor.match_number">0</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="write in file " enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="write in file " enabled="false">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -160,25 +160,16 @@ f.close();
 </stringProp>
           </JSR223PostProcessor>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="0"></stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message">200</stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">8</intProp>
-            <stringProp name="Assertion.scope">all</stringProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="JSON Assertion" enabled="true">
-            <stringProp name="JSON_PATH">$.</stringProp>
-            <stringProp name="EXPECTED_VALUE"></stringProp>
-            <boolProp name="JSONVALIDATION">false</boolProp>
-            <boolProp name="EXPECT_NULL">false</boolProp>
-            <boolProp name="INVERT">false</boolProp>
-            <boolProp name="ISREGEX">true</boolProp>
-          </JSONPathAssertion>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="write in file " enabled="false">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">File file = new File(&quot;C:/CI/jmeter-1/status.csv&quot;)
+rnd = vars.get(&quot;randomString&quot;)
+
+file.append(rnd + &quot;\n&quot;)</stringProp>
+          </JSR223PostProcessor>
           <hashTree/>
           <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
@@ -209,7 +200,7 @@ f.close();
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Add cookie" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -218,31 +209,21 @@ f.close();
 sampler.getCookieManager().add(cookie)</stringProp>
           </JSR223PreProcessor>
           <hashTree/>
-          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Delete line" enabled="false">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">//def data= file.eachLine { line -&gt;
-    // check if the line contains your data 
-//    if(line.contains(&apos;&quot;ticket&quot;:&apos;)){
-//        return line     
-   // }
-//}
+            <stringProp name="script">import org.apache.commons.io.FilenameUtils;
 
-import org.apache.commons.io.FilenameUtils;
-
-d1 = vars.get(&quot;attr4&quot;);
-d2 = vars.get(&quot;FolderPATH&quot;);
-
-File inputFile = new File(d1);
-File tempFile = new File(d2+&quot;myTempFile.txt&quot;);
+File inputFile = new File(&quot;C:/CI/jmeter-1/status.csv&quot;);
+File tempFile = new File(&quot;C:/CI/jmeter-1/myTempFile.csv&quot;);
 
 
 BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
 
-String lineToRemove = &quot;ULQBB4B3U&quot;;
+String lineToRemove = &quot;ZT30BKH8S&quot;;
 String currentLine;
 
 while((currentLine = reader.readLine()) != null) {
@@ -254,6 +235,27 @@ while((currentLine = reader.readLine()) != null) {
 writer.close(); 
 reader.close(); 
 boolean successful = tempFile.renameTo(inputFile);</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Delete line" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">try{
+File file = new File(&quot;C:/CI/jmeter-1/status.csv&quot;)
+line = &quot;9OZGE1VPR&quot;
+file.text = file.text.replaceAll(line, &apos;&apos;)
+}
+catch (Exception exp){
+	println &quot;Exception in code&quot;
+	}
+finally {
+	println &quot;Line deleted or not found&quot;
+	}
+
+	
+//groovy try catch</stringProp>
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
